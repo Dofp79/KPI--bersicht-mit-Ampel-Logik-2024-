@@ -33,6 +33,54 @@ Ampel-Logik:
 🔴 < 70%
 Interpretation: Bewertet Planungs- und Durchführungssicherheit bei Changes
 
+7. KPI-Name: Konvertierungsrate
+DAX-Berechnung:
+Konvertierungsrate = DIVIDE([Tickets], [Anrufe] + [E-Mails], 0) * 100
+Beschreibung: Anteil aus Calls & Mails erstellter Tickets
+Ampel-Logik:
+
+🟢 > 50%
+
+🟡 30–50%
+
+🔴 < 30%
+Interpretation: Gute Rate = effektive Ticket-Erstellung
+
+8. KPI-Name: Ampel_Tickets
+DAX-Berechnung:
+SWITCH(TRUE(), Tickets < 3000, "🟢", Tickets < 5000, "🟡", "🔴")
+Beschreibung: Visualisierung der Gesamtanzahl Tickets
+Ampel-Logik:
+
+< 3000 = 🟢
+
+< 5000 = 🟡
+
+≥ 5000 = 🔴
+Interpretation: Schnelle Einschätzung des Ticketvolumens
+
+9. KPI-Name: ITIL-Härtengrad
+Beschreibung: Kombinierter Score aus SLA, Changes, Eskalationen, Dauer
+Ampel-Logik:
+
+0–100 Skala, Ampel-Schwellen definierbar
+Interpretation: Gesamtbewertung der Prozessqualität
+
+10. KPI-Name: Umzugs-Ampel
+DAX-Berechnung:
+SWITCH(TRUE(), < 10, "🟢", < 15, "🟡", "🔴")
+Beschreibung: Anzahl der monatlichen Umzüge
+Ampel-Logik:
+
+🟢 < 10
+
+🟡 10–14
+
+🔴 ≥ 15
+Interpretation: Zeigt ob Umzugsaktivität im Rahmen bleibt
+
+
+
 4. KPI-Name: Ticket-Durchschnitt (Tage)
 DAX-Berechnung:
 Avg_Dauer = AVERAGE('Tickets'[Durchlaufzeit (Tage)])
