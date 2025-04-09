@@ -33,3 +33,40 @@ Ampel-Logik:
 🔴 < 70%
 Interpretation: Bewertet Planungs- und Durchführungssicherheit bei Changes
 
+4. KPI-Name: Ticket-Durchschnitt (Tage)
+DAX-Berechnung:
+Avg_Dauer = AVERAGE('Tickets'[Durchlaufzeit (Tage)])
+Beschreibung: Durchschnittliche Bearbeitungszeit der Tickets
+Ampel-Logik:
+
+🟢 < 5 Tage
+
+🟡 5–10 Tage
+
+🔴 > 10 Tage
+Interpretation: Lange Bearbeitungszeiten = evtl. Überlastung
+
+5. KPI-Name: Bearbeitungsstand
+Beschreibung: Kombiniert Ticket-Durchschnitt + offene Tickets
+Ampel-Logik:
+
+individuell auf Basis von Werten
+Interpretation: Gesamtüberblick der Erledigungsleistung
+
+6. KPI-Name: Auslastung (Mitarbeiter)
+DAX-Berechnung:
+Aufgabenvolumen = SUM(Tickets) / SUM(Besetzte Stellen)
+Beschreibung: Tickets pro besetzter Stelle
+Ampel-Logik:
+
+🟢 < 10
+
+🟡 10–30
+
+🟠 30–50
+
+🔴 > 50
+Interpretation: Zeigt Über-/Unterlastung
+
+
+
