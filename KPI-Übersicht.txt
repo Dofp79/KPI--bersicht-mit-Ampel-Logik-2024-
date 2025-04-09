@@ -1,0 +1,35 @@
+1. KPI-Name: SLA-Erfüllung (%)
+DAX-Berechnung:
+SLA = DIVIDE([Erfüllte SLA Tickets], [Gesamtanzahl Tickets], 0) * 100
+Beschreibung: Anteil der Tickets, die innerhalb der SLA-Zeit gelöst wurden
+Ampel-Logik:
+
+🟢 ≥ 90%
+
+🟡 80–89%
+
+🔴 < 80%
+Interpretation: Höherer Wert = bessere Serviceleistung
+
+2. KPI-Name: SLA-Alarmfarbe
+DAX-Berechnung:
+SWITCH(TRUE(), SLA ≥ 90, "Grün", SLA ≥ 80, "Gelb", "Rot")
+Beschreibung: Farbampel für SLA-Erfüllung
+Ampel-Logik:
+
+Ampel je nach Schwellenwert
+Interpretation: Farbige Darstellung in Matrix oder Karte
+
+3. KPI-Name: Change-Erfolgsquote
+DAX-Berechnung:
+ChangeSuccess = DIVIDE([Freigegebene Changes], [Gesamt Changes], 0) * 100
+Beschreibung: Anteil der erfolgreich abgeschlossenen Changes ohne Rollback
+Ampel-Logik:
+
+🟢 ≥ 90%
+
+🟡 70–89%
+
+🔴 < 70%
+Interpretation: Bewertet Planungs- und Durchführungssicherheit bei Changes
+
