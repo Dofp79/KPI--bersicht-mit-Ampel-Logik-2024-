@@ -94,6 +94,7 @@ Ampel-Logik:
 🔴 > 10 Tage
 Interpretation: Lange Bearbeitungszeiten = evtl. Überlastung
 
+
 5. KPI-Name: Bearbeitungsstand
 Beschreibung: Kombiniert Ticket-Durchschnitt + offene Tickets
 Ampel-Logik:
