@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" /> <!-- Zeichencodierung -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsives Verhalten auf Mobilgeräten -->
+    <title>IT3 Dashboard – KPI-Ampellogik</title>
+
+    <!-- CSS-Bereich für Design & Layout -->
+    <style>
+        body {
+            font-family: Calibri, sans-serif; /* Grundschriftart */
+            margin: 40px;                     /* Außenabstand um den gesamten Inhalt */
+            background-color: #f4f4f4;        /* Hellgrauer Hintergrund für angenehme Lesbarkeit */
+            color: #333;                      /* Dunkelgraue Schriftfarbe */
+        }
+
+        .container {
+            max-width: 900px;                 /* Max. Breite für zentralen Block */
+            margin: 0 auto;                   /* Zentrierung auf der Seite */
+            background: #fff;                 /* Weißer Hintergrund für Kontrast */
+            padding: 20px;                    /* Innenabstand */
+            border-radius: 8px;               /* Abgerundete Ecken */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Leichter Schatteneffekt */
+        }
+
+        .logo-container {
+            text-align: center;               /* Logo zentrieren */
+            margin-bottom: 20px;              /* Abstand unter dem Logo */
+        }
+
+        .logo {
+            max-width: 250px;                 /* Begrenzte Bildgröße */
+            margin: 0 auto;
+            display: block;                   /* Logo zentriert darstellen */
+        }
+
+        h1 {
+            color: #0F4391;                   /* Dunkelblauer Titel */
+            text-align: center;               /* Zentrierter Text */
+        }
+
+        table {
+            width: 100%;                      /* Tabelle über gesamte Breite */
+            border-collapse: collapse;        /* Doppelte Rahmen entfernen */
+            margin-top: 20px;                 /* Abstand über der Tabelle */
+        }
+
+        th, td {
+            border: 1px solid #ddd;           /* Hellgraue Umrandung für Zellen */
+            padding: 10px;                    /* Innenabstand innerhalb der Zellen */
+            vertical-align: top;              /* Text oben ausrichten (mehrzeilig schöner) */
+        }
+
+        th {
+            background-color: #0F4391;        /* Dunkelblauer Tabellenkopf */
+            color: white;                     /* Weiße Schrift im Kopf */
+        }
+
+        td:nth-child(3) {                     /* Nur 3. Spalte (Ampel-Logik) */
+            width: 30%;                       /* Festerer, größerer Anteil – für bessere Lesbarkeit */
+        }
+
+        td:first-child {
+            font-weight: bold;                /* KPI-Namen hervorheben (1. Spalte) */
+        }
+
+        .ampel {
+            font-size: 1rem;                  /* Normale Schriftgröße für Ampeltext */
+            white-space: pre-line;            /* Zeilenumbrüche aus dem HTML <br> korrekt anzeigen */
+        }
+
+        .highlight {
+            background: #e0f2ff;              /* Blauer Hintergrund für Hinweisbox */
+            padding: 10px;                    /* Innenabstand */
+            border-left: 5px solid #0056b3;   /* Linker blauer Balken für visuelle Hervorhebung */
+            margin-bottom: 20px;              /* Abstand nach unten */
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!-- Logo-Bereich -->
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <!-- Seitentitel -->
+    <h1>Analyse & Interpretation der KPIs – IT3 Dashboard</h1>
+
+    <!-- Einführung / Beschreibung -->
+    <div class="highlight">
+        Diese Übersicht zeigt wichtige Kennzahlen des IT3 Dashboards in Ampel-Logik und ermöglicht eine schnelle Einschätzung der aktuellen IT-Service-Performance.
+    </div>
+
+    <!-- Tabelle mit den KPI-Daten -->
+    <table>
+        <tr>
+            <th>KPI-Name</th>
+            <th>Zweck</th>
+            <th>Ampel-Logik</th>
+            <th>Interpretation</th>
+        </tr>
+
+        <!-- Eintrag 1 -->
+        <tr>
+            <td>Auslastung der Arbeitsprozesse</td>
+            <td>Klassifiziert das Aufgabenvolumen in Ampel-Stufen</td>
+            <td class="ampel">
+                🟢 Gering (&lt;10)<br>
+                🟡 Normal (10–29)<br>
+                🔴 Kritisch (&gt;50)<br>
+                ⚪ Unbekannt
+            </td>
+            <td>Zeigt die aktuelle Belastungssituation in der Organisation auf einen Blick</td>
+        </tr>
+
+        <!-- Weitere KPI-Zeilen folgen im gleichen Stil -->
+        <tr>
+            <td>Tickets-Durchschnittswert</td>
+            <td>Ampel-Kategorisierung des Ticket-Durchschnitts</td>
+            <td class="ampel">
+                🟢 Gering (&lt;500)<br>
+                🟡 Normal (500–799)<br>
+                🔴 Kritisch (≥1000)<br>
+                ⚪ Kein Wert
+            </td>
+            <td>Liefert eine visuelle Bewertung des Ticketaufkommens</td>
+        </tr>
+
+        <tr>
+            <td>Konversionsgrad</td>
+            <td>Visualisiert die Konvertierungsrate in Ampelform</td>
+            <td class="ampel">
+                🟢 Optimal (&gt;90%)<br>
+                🟡 Normal (70–90%)<br>
+                🔴 Kritisch (&lt;50%)<br>
+                ⚪ Unbekannt
+            </td>
+            <td>Zeigt an, wie hoch der Grad der Umsetzung von eingehenden Anfragen in konkrete Tickets ist</td>
+        </tr>
+
+        <tr>
+            <td>Bearbeitungsstand</td>
+            <td>Durchschnittliche Bearbeitungsdauer von Tickets in Tagen</td>
+            <td class="ampel">
+                🟢 Sehr gut (&lt;1 Tag)<br>
+                🟡 Akzeptabel (1–2 Tage)<br>
+                🔴 Kritisch (≥7 Tage)<br>
+                ⚪ Unbekannt
+            </td>
+            <td>Ermöglicht die zeitliche Nachvollziehbarkeit von Bearbeitungs- und Lösungsprozessen</td>
+        </tr>
+
+        <tr>
+            <td>Change-Erfolgsquote</td>
+            <td>Klassifiziert die Erfolgsquote von Changes</td>
+            <td class="ampel">
+                🟢 Sehr stabil (≥95%)<br>
+                🟡 Mittel (85–94%)<br>
+                🔴 Kritisch (&lt;85%)
+            </td>
+            <td>Dient der Übersicht über die Entwicklung von Change-Prozessen</td>
+        </tr>
+
+        <tr>
+            <td>SLA-Durchschnittswert</td>
+            <td>Visualisiert SLA-Erfüllung als Ampel</td>
+            <td class="ampel">
+                🟢 Optimal (≥90%)<br>
+                🟡 Warnung (80–89%)<br>
+                🔴 Kritisch (&lt;80%)
+            </td>
+            <td>Stellt Informationen zur Umsetzung vertraglicher Reaktionszeitfenster bereit</td>
+        </tr>
+
+    </table>
+</div>
+</body>
+</html>
